@@ -1,0 +1,51 @@
+import styled from 'styled-components';
+import Nav from './Nav';
+
+const Logo = styled.h1`
+  font-size: 4rem;
+  position: relative;
+  margin-left: 2rem;
+  z-index: 2;
+  transform: skew(-7deg);
+  background: red;
+  a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    :hover {
+      color: blue;
+    }
+  }
+`;
+
+const HeaderStyle = styled.header`
+  .bar {
+    border-bottom: 10px solid var(--black, black);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .sub-bar {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    border-bottom: 1px solid var(--black, black);
+  }
+`;
+
+export default function Header() {
+  return (
+    <HeaderStyle>
+      <div className="bar">
+        <Logo>
+          <a href="/">Slick Fits</a>
+        </Logo>
+      </div>
+      <div className="sub-bar">
+        <p>Search</p>
+      </div>
+      <Nav />
+    </HeaderStyle>
+  );
+}
