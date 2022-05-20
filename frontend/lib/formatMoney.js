@@ -1,9 +1,16 @@
-const formatter = new Intl.NumberFormat('en-US', {
-  style: 'currency',
-  currency: 'USD',
-  minimumFractionDigits: 0,
-});
-export default function formatMoney(value) {
-  if (!value) return '$0.00';
-  return formatter.format(value / 100);
+export default function formatMoney(amount = 0) {
+  const options = {
+    style: 'currency',
+    currency: 'USD',
+    minimumFractionDigits: 2,
+  };
+
+  // check if its a clean dollar amount
+  if (amount % 100 === 0) {
+    options.minimumFractionDigits = 0;
+  }
+
+  const formatter = Intl.NumberFormat('en-US', options);
+
+  return formatter.format(amount / 100);
 }

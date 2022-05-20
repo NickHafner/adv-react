@@ -49,7 +49,7 @@ export default function SingleProduct({ id }) {
   return (
     <ProductStyles>
       <Head>
-        <title>Slick Fits | {Product.name}</title>
+        <title>Sick Fits | {Product.name}</title>
       </Head>
       <img
         src={Product.photo.image.publicUrlTransformed}

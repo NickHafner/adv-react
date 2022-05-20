@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const SlickButton = styled.button`
+const SickButton = styled.button`
   background: red;
   color: white;
   font-weight: 500;
@@ -17,4 +17,4 @@ const SlickButton = styled.button`
   }
 `;
 
-export default SlickButton;
+export default SickButton;
